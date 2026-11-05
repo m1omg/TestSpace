@@ -6,7 +6,11 @@ You are the only overnight attendant at a remote veterinary clinic. Animals arri
 
 ## Playing
 
-The game is prebuilt: **open `index.html` in a modern browser** (Chrome, Edge, Firefox or Safari with WebGL 2). It also works straight from disk with no server, and every texture and sound is generated procedurally, so nothing has to be downloaded. Headphones are strongly recommended for the 3D audio.
+**Play online: https://m1omg.github.io/TestSpace/**
+
+The site is published from the `gh-pages` branch. The *Deploy to GitHub Pages* workflow rebuilds and republishes it whenever `main` changes.
+
+To play locally, open `index.html` in a modern browser (Chrome, Edge, Firefox or Safari with WebGL 2). It also works straight from disk with no server, and every texture and sound is generated procedurally, so nothing has to be downloaded. Headphones are strongly recommended for the 3D audio.
 
 To work on the source:
 
