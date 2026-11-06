@@ -166,6 +166,15 @@ export class Player {
 
   setFlashlightShadows(on) {
     this.flashlight.castShadow = !!on;
+    this.ensureShadowMap();
+  }
+
+  // Lit materials sample the flashlight's shadow map whenever shadows are
+  // enabled; if it has never been rendered, their draw calls fail and the
+  // scene goes black. Render it once whenever it does not exist yet.
+  ensureShadowMap() {
+    const fl = this.flashlight;
+    if (fl.castShadow && !fl.shadow.map) fl.shadow.needsUpdate = true;
   }
 
   teleport(x, z, yaw = this.yaw, pitch = 0) {
@@ -393,7 +402,7 @@ export class Player {
     this.flashTarget.position.copy(cam.position).addScaledVector(fwd, 6);
     const flick = opts.flashFlicker || 1;
     fl.intensity = this.flashlightOn ? this.flashIntensity * this.flashBoost * flick : 0;
-    // skip the shadow-map pass entirely while the flashlight is off
+    // skip the shadow-map pass while the flashlight is off (see ensureShadowMap)
     fl.shadow.autoUpdate = this.flashlightOn;
     fl.angle = this.flashBoost > 1.2 ? 0.55 : 0.42;
     // body (CCTV only)
