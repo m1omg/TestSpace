@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Night Ward</title>
+    <meta name="description" content="A first-person horror game about screening and treating patients at a remote overnight veterinary clinic." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Special+Elite&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="game" tabindex="0" aria-label="The Night Ward game view"></canvas>
+    <div id="hud" class="hidden"></div>
+    <div id="overlays"></div>
+    <div id="screens"></div>
+    <noscript>
+      <div style="position:fixed;inset:0;display:grid;place-items:center;color:#eee;font-family:sans-serif">The Night Ward needs JavaScript and WebGL 2.</div>
+    </noscript>
+    <script src="dist/night-ward.js"></script>
+  </body>
+</html>
