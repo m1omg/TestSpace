@@ -1312,6 +1312,7 @@ function attractCamera(dt) {
 
 function visualUpdate(dt, alpha, realDt) {
   const pl = G.player;
+  pl.ensureShadowMap();
   G.lighting.update(dt);
   G.level.update(dt, G.render.time);
   G.level.updateGlows(G.settings.get('glow'));
